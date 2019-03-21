@@ -1,0 +1,26 @@
+{
+  "name": "trial",
+  "version": "1.0.0",
+  "description": "[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Diogn/wp-udemy.git"
+  },
+  "author": "Rino DC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Diogn/wp-udemy/issues"
+  },
+  "homepage": "https://github.com/Diogn/wp-udemy#readme",
+  "dependencies": {
+    "composer": "^4.1.0",
+    "timber": "^3.1.3"
+  },
+  "devDependencies": {
+    "tailwind": "^4.0.0"
+  }
+}
