@@ -45,6 +45,8 @@ if ( ! function_exists( 'trial_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'trial' ),
+			'header' => esc_html__( 'header', 'trial' ),
+			'footer' => esc_html__( 'footer', 'trial' )
 		) );
 
 		/*
@@ -115,6 +117,22 @@ function trial_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'trial_widgets_init' );
+
+// EXCERPT LIMITATION FUNCTION
+
+function get_excerpt(){
+	$permalink = esc_url(get_permalink());
+	$excerpt = get_the_content();
+	$excerpt = preg_replace(" ([.*?])",'',$excerpt);
+	$excerpt = strip_shortcodes($excerpt);
+	$excerpt = strip_tags($excerpt);
+	$excerpt = substr($excerpt, 0, 485);
+	$excerpt = substr($excerpt, 0, strripos($excerpt, " "));
+	$excerpt = trim(preg_replace( '/s+/', ' ', $excerpt));
+	$excerpt = $excerpt.'... <a href="'.$permalink.'">more</a>';
+	return $excerpt;
+	}
+add_action( 'wp_enqueue_scripts', 'get_excerpt' );
 
 /**
  * Enqueue scripts and styles.

@@ -12,7 +12,7 @@
  * @package wp_udemy
  */
 
-get_header();
+get_template_part( 'components/header' );
 ?>
 
 	<div id="primary" class="content-area">

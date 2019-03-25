@@ -1,0 +1,64 @@
+@tailwind preflight;
+
+
+@tailwind components;
+
+/* Here we can add any custom overrides */
+
+@tailwind utilities;
+
+/* Here we can add our own utilities or custom CSS */
+@tailwind screens;
+
+a
+  text-decoration: none;
+
+body
+  li
+    list-style: none
+
+// NAVIGATION
+  nav
+    #menu-header  
+      list-style: none
+      display: flex
+      margin: 0 0
+      padding: 0 0
+      li
+        margin-right: 10px
+        list-style: none
+        a
+          font-family: Raleway 
+          margin  0 0
+          color: #000
+          
+          &:hover
+            color: #555
+  
+  .content-area
+    .site-main
+      margin: 0 auto
+
+.logo-footer
+  width: 5rem
+  height: auto
+  margin: 0 auto
+
+#menu-footer
+  @media (min-width 319px) {
+    width: 100%
+    display: flex
+    justify-content: center
+  }
+  li
+    a
+      text-decoration: none
+      color: #fff
+      margin-right: 10px
+
+      &:hover
+        color: #444
+
+.post-categories
+  margin: 0 0
+  padding: 0 0
