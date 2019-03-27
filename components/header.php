@@ -14,10 +14,21 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><?php wp_title( '|', true, 'right' ); ?></title>
+  <link rel="profile" href="https://gmpg.org/xfn/11">
+  <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+
+  <!-- Custom css -->
   <link href="<?php bloginfo('stylesheet_directory'); ?>/assets/css/single/main.css" rel="stylesheet">
   <link href="<?php bloginfo('stylesheet_directory'); ?>/assets/css/single/custom.css" rel="stylesheet">
-  <link href="<?php bloginfo('stylesheet_directory'); ?>/assets/css/single/custom.css" rel="stylesheet">
+
+  <!-- Bootstrap core CSS -->
+	<!-- <link href="<?php bloginfo('stylesheet_directory'); ?>/assets/css/single/bootstrap.min.css" rel="stylesheet"> -->
+
+  <!-- Font Awesome Icons -->
+  <link href="<?php bloginfo('stylesheet_directory'); ?>/assets/css/single/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  
 	<?php wp_head(); ?>
 </head>
 <!-- ======================
@@ -26,8 +37,8 @@
 <body <?php body_class(); ?>>
 
   <!-- NAVBAR  -->
-  <nav class="flex items-center justify-between flex-no-wrap bg-white p-3">
-    <div class="flex items-center flex-no-shrink mr-2">
+  <div class="flex justify-center bg-grey-lighter py-3">
+    <div class="text-center flex items-center flex-no-shrink mr-2">
       <svg class="w-8 mx-3" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
           viewBox="0 0 536.1 536.1" enable-background="new 0 0 536.1 536.1" xml:space="preserve">
         <g>
@@ -43,11 +54,11 @@
         </g>
       </svg>
     </div>
-    <div class="flex items-center flex-no-shrink mr-3 mb-1">
+    <div class="text-center flex items-center flex-no-shrink mr-3 mb-1">
       |
     </div>
 
-    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto relative">
+    <div class="w-full flex items-center sm:w-auto relative">
       <div class="text-base lg:flex-grow">
         
         <?php
@@ -60,6 +71,6 @@
         
       </div>
     </div>
-  </nav>
+  </div>
 
 </body>

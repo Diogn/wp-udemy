@@ -1,53 +1,53 @@
 <?php
 /*
-    Template Name: Home Page
+    Template Name: Homepage
 */
 
 ?>
 
-<head>
-	<link href="<?php bloginfo('stylesheet_directory'); ?>/assets/css/single/main.css" rel="stylesheet">
-  <link href="<?php bloginfo('stylesheet_directory'); ?>/assets/css/single/custom.css" rel="stylesheet">
-</head>
-
-<header class="md:w-full lg:w-1/2 mx-auto">
+<header class="entry-header md:w-full lg:w-full mx-auto">
 	<?php get_template_part( 'components/header' ); ?>
 </header>
 
-<article class="mx-auto sm:w-full md:w-full lg:w-1/2" ?>
+<article class="mx-auto sm:w-full md:w-full lg:w-full" ?>
 	
 	<?php
 
 	global $post;
-	$args = array( 'posts_per_page' => 5, 'offset'=> 1, 'category' => 1 );
+	$args = array( 'posts_per_page' => 5, 'offset'=> 1 );
 
 	$myposts = get_posts( $args );
 	foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
-		<li>
-			<?php if ( has_post_thumbnail() ) {  // Check for Feature Imamge ?>
-				<div class="post-image w-full list-reset ">
-					<?php the_post_thumbnail(); ?>
-				</div><!-- post-image -->
-			<?php } ?>
-			<div class="text-2xl text-black mt-3 lg:w-full md:w-5/6 sm:w-5/6 md:mx-auto xs:mx-3">
-				<a href="<?php the_permalink(); ?>" class="text-black no-underline">
-					<?php the_title(); ?>
-				</a>
-			</div>
-			<div class="flex text-sm text-black xs:mx-3">
-				<p><?php the_category(); ?></p>&nbsp;
-				<p><?php the_tags(); ?></p>
-			</div>
-			<div class="mb-6 lg:w-full md:w-5/6 sm:w-5/6 md:mx-auto xs:mx-3">
-				<?php echo get_excerpt();?>
-			</div>
-			
-		</li>
+		<section class="w-1/2 mx-auto py-4	">
+			<div class="post-details border-solid border-black">
+				<?php if ( has_post_thumbnail() ) {  // Check for Feature Imamge ?>
+					<div class="post-image">
+						<?php the_post_thumbnail(); ?>
+					</div><!-- post-image -->
+				<?php } ?>
+				<div class="text-2xl text-black mt-3 lg:w-full md:w-5/6 sm:w-5/6 md:mx-auto xs:mx-3">
+					<a href="<?php the_permalink(); ?>" class="text-black no-underline">
+						<?php the_title(); ?>
+					</a>
+				</div>
+				<div class="flex text-sm text-black xs:mx-3 my-2">
+					<p class="bg-grey px-3 rounded-lg">Category: <?php the_category( ', ' ); ?></p>&emsp;
+					<i class="fa fa-tags"></i> <?php the_tags(); ?>
+				</div>
+				<div class="post-excerpt mb-6 lg:w-full md:w-5/6 sm:w-5/6 md:mx-auto xs:mx-3 my-2">
+					<?php echo get_excerpt();?>
+				</div>
+				
+			</div>	
+		</section>
+		
 	<?php endforeach; 
-	wp_reset_postdata();?>
+		wp_reset_postdata(); 
+	?>
 
+	<?php
+		get_template_part( 'components/footer' ); ?>
 
+	
 
 </article><!-- #post -->
-
-<?php get_template_part( 'components/footer' ); ?>

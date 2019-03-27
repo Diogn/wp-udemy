@@ -13,7 +13,7 @@ if ( ! function_exists( 'trial_setup' ) ) :
 	 *
 	 * Note that this function is hooked into the after_setup_theme hook, which
 	 * runs before the init hook. The init hook is too late for some features, such
-	 * as indicating support for post thumbnails.
+	 * as indicating support for 	 thumbnails.
 	 */
 	function trial_setup() {
 		/*
@@ -115,6 +115,16 @@ function trial_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Bottom Sidebar', 'trial' ),
+		'id'            => 'sidebar-2',
+		'description'   => esc_html__( 'Add widgets here.', 'trial' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
 }
 add_action( 'widgets_init', 'trial_widgets_init' );
 
@@ -126,7 +136,7 @@ function get_excerpt(){
 	$excerpt = preg_replace(" ([.*?])",'',$excerpt);
 	$excerpt = strip_shortcodes($excerpt);
 	$excerpt = strip_tags($excerpt);
-	$excerpt = substr($excerpt, 0, 485);
+	$excerpt = substr($excerpt, 0, 445);
 	$excerpt = substr($excerpt, 0, strripos($excerpt, " "));
 	$excerpt = trim(preg_replace( '/s+/', ' ', $excerpt));
 	$excerpt = $excerpt.'... <a href="'.$permalink.'">more</a>';
@@ -134,21 +144,6 @@ function get_excerpt(){
 	}
 add_action( 'wp_enqueue_scripts', 'get_excerpt' );
 
-/**
- * Enqueue scripts and styles.
- */
-function trial_scripts() {
-	wp_enqueue_style( 'trial-style', get_stylesheet_uri() );
-
-	wp_enqueue_script( 'trial-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
-	wp_enqueue_script( 'trial-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-}
-add_action( 'wp_enqueue_scripts', 'trial_scripts' );
 
 /**
  * Implement the Custom Header feature.
