@@ -9,6 +9,7 @@ Description
 1. Pull from Github Repo 
 2. npm install -> ( for modules )
 3. npm run watch -> ( for production styling )
+4. install ACF PRO -> key hubungi Yudha[dot]wijaya@rocketmail.com
 
 Note:
 Excerpt still on process, and archieve, and category, and 404.
