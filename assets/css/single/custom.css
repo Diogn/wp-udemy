@@ -34024,6 +34024,16 @@ body li {
   list-style: none;
 }
 
+#primary {
+  width: 50%;
+  margin: 0 auto;
+}
+
+#primary #main {
+  width: 100%;
+  margin: 0 auto;
+}
+
 nav #menu-header {
   list-style: none;
   display: flex;
@@ -34077,4 +34087,10 @@ nav #menu-header li a:hover {
 .post-categories {
   margin: 0 0;
   padding: 0 0;
+}
+
+.page-numbers {
+  display: flex;
+  justify-content: center;
+  margin: 0 20px;
 }

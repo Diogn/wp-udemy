@@ -12,7 +12,7 @@
  * @package wp_udemy
  */
 
-get_header();
+	get_template_part( 'components/header' );
 ?>
 
 	<div id="primary" class="content-area">
@@ -32,17 +32,34 @@ get_header();
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
+			?>
+				
+			<div class="post-details border-solid border-black">
+				<?php if ( has_post_thumbnail() ) {  // Check for Feature Imamge ?>
+				<div class="post-image">
+				<?php the_post_thumbnail(); ?>
+				</div><!-- post-image -->
+				<?php } ?>
+				<div class="text-2xl text-black mt-3 lg:w-full md:w-5/6 sm:w-5/6 md:mx-auto xs:mx-3">
+					<a href="<?php the_permalink(); ?>" class="text-black no-underline">
+						<?php the_title(); ?>
+					</a>
+				</div>
+				<div class="flex text-sm text-black xs:mx-3 my-2">
+					<p class="bg-grey px-3 rounded-lg">Category: <?php the_category( ', ' ); ?></p>&emsp;
+						<i class="fa fa-tags"></i> <?php the_tags(); ?>
+				</div>
+				<div class="post-excerpt mb-6 lg:w-full md:w-5/6 sm:w-5/6 md:mx-auto xs:mx-3 my-2">
+					<?php echo get_excerpt();?>
+				</div>
+			</div>	
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
+			<?php
 			endwhile;
 
-			the_posts_navigation();
+			// the_posts_navigation();
+
+			get_template_part( 'components/pagination-home' );
 
 		else :
 
@@ -53,3 +70,5 @@ get_header();
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
+	<?php
+		get_template_part( 'components/footer' ); ?>

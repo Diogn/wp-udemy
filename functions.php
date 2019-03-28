@@ -144,6 +144,12 @@ function get_excerpt(){
 	}
 add_action( 'wp_enqueue_scripts', 'get_excerpt' );
 
+// Enqueue JS Limit Excerpt
+function get_excerpt_length() {
+	wp_register_script('myFunction', get_template_directory_uri() . '/excerpt.js', true);
+	wp_enqueue_script('myFunction');
+}
+add_action( 'admin_enqueue_scripts', 'get_excerpt_length');
 
 /**
  * Implement the Custom Header feature.

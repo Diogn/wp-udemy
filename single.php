@@ -12,7 +12,7 @@ get_template_part( 'components/header' );
 ?>
 
 	<div class="container-fluid">
-		<div id="primary" class="flex row">
+		<div id="primary-single" class="flex justify-center">
 			<main class="w-2/3 mx-2">
 				<?php
 					while ( have_posts() ) :

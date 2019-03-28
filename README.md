@@ -8,7 +8,10 @@ Description
 
 1. Pull from Github Repo 
 2. npm install -> ( for modules )
-3. npm run dev -> ( for production )
+3. npm run watch -> ( for production styling )
+
+Note:
+Excerpt still on process, and archieve, and category, and 404.
 
 
 * Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
