@@ -10,6 +10,7 @@ Description
 2. npm install -> ( for modules )
 3. npm run watch -> ( for production styling )
 4. install ACF PRO -> key hubungi Yudha[dot]wijaya@rocketmail.com
+5. After installin acf import file acf(bla bla bla).xml
 
 Note:
 Excerpt still on process, and archieve, and category, and 404.

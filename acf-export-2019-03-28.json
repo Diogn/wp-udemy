@@ -1,0 +1,84 @@
+[
+    {
+        "key": "group_5c9b4087bc391",
+        "title": "Editor Name",
+        "fields": [
+            {
+                "key": "field_5c9b409f0adac",
+                "label": "Editor",
+                "name": "editor",
+                "type": "repeater",
+                "instructions": "Input Your Name, Bagian, Inisial",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "",
+                "sub_fields": [
+                    {
+                        "key": "field_5c9b4f96252d0",
+                        "label": "Editor Name",
+                        "name": "editor_name",
+                        "type": "text",
+                        "instructions": "Your Name",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_5c9b4fce252d1",
+                        "label": "Initial Name",
+                        "name": "initial_name",
+                        "type": "text",
+                        "instructions": "Masukan Inisial Name",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    }
+]
