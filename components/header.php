@@ -39,7 +39,7 @@
   <!-- NAVBAR  -->
   <div class="flex justify-center bg-grey-lighter py-3">
     <div class="text-center flex items-center flex-no-shrink mr-2">
-      <svg class="w-8 mx-3" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      <a href="<?php echo home_url(); ?>"><svg class="w-8 mx-3" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
           viewBox="0 0 536.1 536.1" enable-background="new 0 0 536.1 536.1" xml:space="preserve">
         <g>
           <path fill="#00599A" d="M508.7,479.7c-5.1,18.4-24.3,37.6-42.8,42.6c0,0-51.2,13.8-197.9,13.8S70.2,522.3,70.2,522.3
@@ -52,7 +52,8 @@
               326.7,420.7 279.8,420.7 279.8,433.5 439.9,433.5 439.9,420.7 395,420.7 		"/>
           </g>
         </g>
-      </svg>
+        </svg>
+      </a>
     </div>
     <div class="text-center flex items-center flex-no-shrink mr-3 mb-1">
       |
