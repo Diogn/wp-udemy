@@ -49,6 +49,6 @@ get_template_part( 'components/header' );
 
 		</main><!-- #main -->
 	</section><!-- #primary -->
-
-<?php
-get_template_part( 'components/footer' );
+	<div class="footer-search">
+		<?php get_template_part( 'components/footer' )  ?>
+	</div>
