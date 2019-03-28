@@ -13,7 +13,7 @@
 <?php wp_footer(); ?>
 
 <!-- FOOTER SECTION -->
-	<footer class="container-fluid bg-grey-dark">
+	<footer class="container-fluid bg-grey-dark min-height">
 		<div class="sm:w-1/2 flex mx-auto xs:flex-wrap sm:flex-no-wrap">
 			<div class="flex justify-center xs:mx-auto xs:justify-center xs:mt-3">
 				<p class="mb-1"><a href="/"><img class="logo-footer"

@@ -7,7 +7,7 @@
  * @package wp_udemy
  */
 
-get_header();
+get_template_part( 'components/header' );
 ?>
 
 	<section id="primary" class="content-area">
@@ -51,5 +51,4 @@ get_header();
 	</section><!-- #primary -->
 
 <?php
-get_sidebar();
-get_footer();
+get_template_part( 'components/footer' );
