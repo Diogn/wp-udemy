@@ -6,7 +6,7 @@ function myFunction() {
   let text = document.createElement("p");
   let node = document.createTextNode("Word Counter:");
   
-  let destination = document.getElementById("postexcerpt");
+  let destination = document.getElementById("postexcerpt").getElementsByClassName("inside");
   
-  destination.appendChild(text);
+  destination.innerHTML = text.appendChild(node);
 }
