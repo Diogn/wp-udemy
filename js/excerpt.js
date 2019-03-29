@@ -1,12 +1,18 @@
-window.onload = function() {myFunction()};
+window.onload = function myFunction() {
 
-function myFunction() {
-  let counter = document.getElementById("excerpt");
-  let textCounter = counter.length;
-  let text = document.createElement("p");
-  let node = document.createTextNode("Word Counter:");
+  let targetText = document.querySelector("#excerpt");
+  var test      = document.getElementById("excerpt").value.length;
+  var node      = document.createElement("p");
+  var place     = document.getElementById("postexcerpt").getElementsByClassName("inside");
   
-  let destination = document.getElementById("postexcerpt").getElementsByClassName("inside");
-  
-  destination.innerHTML = text.appendChild(node);
+  place[0].appendChild(node).setAttribute("id", "spot");
+  document.getElementById("spot").innerHTML = test;
+  // Listen Words
+  targetText.onkeyup = function (x) {
+    var test      = targetText.value.length;
+    
+    document.getElementById("spot").innerHTML = test;
+
+  }
 }
+
