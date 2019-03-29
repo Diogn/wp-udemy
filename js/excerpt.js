@@ -8,11 +8,12 @@ window.onload = function myFunction() {
   place[0].appendChild(node).setAttribute("id", "spot");
   document.getElementById("spot").innerHTML = test;
   // Listen Words
-  targetText.onkeyup = function (x) {
+  targetText.onkeypress = function (x) {
     var test      = targetText.value.length;
-    
-    document.getElementById("spot").innerHTML = test;
 
+    test < 11  ? document.getElementById("spot").innerHTML = test : x.preventDefault();
+
+    
   }
 }
 
